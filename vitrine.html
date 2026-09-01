@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Demonstração de Vitrine</title>
+<meta name="description" content="Vitrine online da Volts Serviços Elétricos — consulte produtos, preços e disponibilidade em tempo real.">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Volts Serviços Elétricos">
+<meta name="theme-color" content="#111111">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voltseletrica.com.br/vitrine.html">
+<meta property="og:title" content="Demonstração de Vitrine">
+<meta property="og:description" content="Vitrine online da Volts Serviços Elétricos.">
+<meta property="og:image" content="images/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;-webkit-text-size-adjust:100%;}
+body{font-family:'Inter',sans-serif;color:#2b2b2b;background:#111111;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;-webkit-tap-highlight-color:transparent;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+
+:root{
+  --black:#111111;
+  --gray-900:#2b2b2b;
+  --gray-300:#c9c9c9;
+  --white:#ffffff;
+  --yellow:#F5C400;
+  --header-h:80px;
+  --font-head:'Oswald',sans-serif;
+}
+
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* header — mesmo padrão do site */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--header-h);
+  background:rgba(17,17,17,.96);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;}
+.logo{display:flex;align-items:center;gap:12px;color:var(--white);}
+.logo-icon{
+  width:44px;height:44px;border-radius:11px;background:var(--black);
+  border:1px solid rgba(245,196,0,.35);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-icon svg{width:22px;height:22px;}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-text strong{font-family:var(--font-head);font-size:1.28rem;letter-spacing:.03em;color:var(--white);}
+.logo-text span{font-size:.62rem;letter-spacing:.14em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+
+nav{display:flex;align-items:center;gap:36px;}
+.nav-links{display:flex;align-items:center;gap:30px;}
+.nav-links a{color:var(--gray-300);font-size:.94rem;font-weight:500;transition:color .2s ease;}
+.nav-links a:hover{color:var(--white);}
+.nav-links a.active{
+  color:var(--yellow);border:1px solid rgba(245,196,0,.5);border-radius:30px;padding:8px 18px;font-weight:600;font-size:.86rem;
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:11px 20px;border-radius:8px;font-weight:600;font-size:.9rem;
+  transition:all .25s ease;white-space:nowrap;border:2px solid transparent;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0;}
+.btn-primary{background:var(--yellow);color:var(--black);border-color:var(--yellow);}
+.btn-primary:hover{background:#c79a00;border-color:#c79a00;}
+
+.burger{display:none;width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,.08);align-items:center;justify-content:center;flex-shrink:0;}
+.burger svg{width:22px;height:22px;stroke:var(--white);}
+
+.mobile-nav{
+  position:fixed;top:var(--header-h);left:0;right:0;background:var(--black);
+  z-index:999;max-height:0;overflow:hidden;transition:max-height .35s ease;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.mobile-nav.open{max-height:400px;}
+.mobile-nav ul{padding:12px 24px 20px;}
+.mobile-nav a{
+  display:block;color:var(--white);font-size:1.05rem;font-weight:600;padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--font-head);
+}
+.mobile-nav li:last-child a{border-bottom:none;color:var(--yellow);}
+
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .burger{display:flex;}
+}
+
+/* vitrine */
+main{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;width:100%;}
+#vitrineFrame{display:block;width:100%;border:none;background:var(--white);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Volts Serviços Elétricos - início">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="#F5C400" xmlns="http://www.w3.org/2000/svg"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+      </span>
+      <span class="logo-text"><strong>VOLTS</strong><span>Serviços Elétricos</span></span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#mercado">Mercado</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="vitrine.html" class="active">Vitrine</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+  <ul>
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="index.html#produtos">Produtos</a></li>
+    <li><a href="index.html#mercado">Mercado</a></li>
+    <li><a href="index.html#contato">Contato</a></li>
+    <li><a href="vitrine.html">Vitrine</a></li>
+  </ul>
+</nav>
+
+<main>
+  <iframe id="vitrineFrame" src="https://voltsservicoseletricos.egestor.com.br/vitrine/" style="width:100%; height:800px; border:none;" title="Vitrine online da Volts Serviços Elétricos"></iframe>
+</main>
+
+<script>
+(function(){
+  var frame = document.getElementById('vitrineFrame');
+  function resizeFrame(){
+    frame.style.height = (window.innerHeight - 80) + 'px';
+  }
+  window.addEventListener('resize', resizeFrame);
+  window.addEventListener('orientationchange', resizeFrame);
+  resizeFrame();
+
+  var burger = document.getElementById('burgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', function(){
+    var isOpen = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+})();
+</script>
+</body>
+</html>
